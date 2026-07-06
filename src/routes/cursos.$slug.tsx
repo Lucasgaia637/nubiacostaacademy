@@ -43,7 +43,7 @@ export const Route = createFileRoute("/cursos/$slug")({
 });
 
 function CoursePage() {
-  const { course } = Route.useLoaderData();
+  const { course } = Route.useLoaderData() as { course: Course };
 
   return (
     <Shell>
