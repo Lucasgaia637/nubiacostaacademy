@@ -69,13 +69,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "WhatsApp que Fecha — Ebook para fotógrafos" },
+      { title: "WhatsApp que Fecha — Ebook para fotógrafos que querem vender mais" },
       {
         name: "description",
         content:
           "40 mensagens prontas para responder clientes, recuperar conversas paradas e fechar mais ensaios pelo WhatsApp.",
       },
-      { property: "og:title", content: "WhatsApp que Fecha — Ebook para fotógrafos" },
+      { property: "og:title", content: "WhatsApp que Fecha — Ebook para fotógrafos que querem vender mais" },
       {
         property: "og:description",
         content:
@@ -83,6 +83,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "WhatsApp que Fecha — Ebook para fotógrafos que querem vender mais" },
+      { name: "description", content: "40 mensagens prontas para responder clientes, recuperar conversas paradas e fechar mais ensaios pelo WhatsApp. O roteiro definitivo para fotógrafos." },
+      { property: "og:description", content: "40 mensagens prontas para responder clientes, recuperar conversas paradas e fechar mais ensaios pelo WhatsApp. O roteiro definitivo para fotógrafos." },
+      { name: "twitter:description", content: "40 mensagens prontas para responder clientes, recuperar conversas paradas e fechar mais ensaios pelo WhatsApp. O roteiro definitivo para fotógrafos." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/fcddca41-d71b-4a31-9baf-f656817bac85" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/fcddca41-d71b-4a31-9baf-f656817bac85" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
