@@ -69,17 +69,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Núbia Costa — Cursos de fotografia autoral" },
+      { title: "WhatsApp que Fecha — Ebook para fotógrafos" },
       {
         name: "description",
         content:
-          "Cursos online de fotografia autoral, editorial e casamento. Um método sensível para desenvolver uma linguagem visual própria.",
+          "40 mensagens prontas para responder clientes, recuperar conversas paradas e fechar mais ensaios pelo WhatsApp.",
       },
-      { property: "og:title", content: "Núbia Costa — Cursos de fotografia autoral" },
+      { property: "og:title", content: "WhatsApp que Fecha — Ebook para fotógrafos" },
       {
         property: "og:description",
         content:
-          "Um espaço dedicado a fotógrafos que buscam construir uma linguagem visual própria, sensível e consistente.",
+          "O roteiro de atendimento que leva o cliente do primeiro contato ao contrato assinado.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
