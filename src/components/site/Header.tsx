@@ -1,18 +1,8 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
-
-const nav = [
-  { to: "/", label: "Início" },
-  { to: "/cursos", label: "Cursos" },
-  { to: "/sobre", label: "Sobre" },
-  { to: "/blog", label: "Blog" },
-  { to: "/contato", label: "Contato" },
-] as const;
+import { ArrowUpRight } from "lucide-react";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -25,7 +15,7 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border/60"
+          ? "bg-background/85 backdrop-blur-md border-b border-border/60"
           : "bg-transparent"
       }`}
     >
@@ -34,65 +24,17 @@ export function Header() {
           scrolled ? "h-14" : "h-20"
         }`}
       >
-        <Link to="/" className="font-display text-xl tracking-tight">
+        <a href="/" className="font-display text-xl tracking-tight">
           Núbia<span className="text-accent"> · </span>Costa
-        </Link>
-
-        <nav className="hidden md:flex items-center gap-9">
-          {nav.map((n) => (
-            <Link
-              key={n.to}
-              to={n.to}
-              activeOptions={{ exact: n.to === "/" }}
-              className="text-sm text-foreground/80 hover:text-foreground link-underline transition-colors"
-              activeProps={{ className: "text-foreground" }}
-            >
-              {n.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="hidden md:block">
-          <Link
-            to="/cursos"
-            className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm hover:opacity-90 transition-opacity"
-          >
-            Conhecer cursos
-          </Link>
-        </div>
-
-        <button
-          className="md:hidden p-2 -mr-2"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Menu"
+        </a>
+        <a
+          href="/#comprar"
+          className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm hover:opacity-90 transition-opacity"
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          Quero o ebook
+          <ArrowUpRight className="h-3.5 w-3.5" />
+        </a>
       </div>
-
-      {open && (
-        <div className="md:hidden border-t border-border bg-background">
-          <div className="container-editorial py-6 flex flex-col gap-4">
-            {nav.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                onClick={() => setOpen(false)}
-                className="text-base py-1"
-              >
-                {n.label}
-              </Link>
-            ))}
-            <Link
-              to="/cursos"
-              onClick={() => setOpen(false)}
-              className="mt-2 inline-flex justify-center rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm"
-            >
-              Conhecer cursos
-            </Link>
-          </div>
-        </div>
-      )}
     </header>
   );
 }
