@@ -3,7 +3,7 @@ import { ArrowUpRight, Check, ChevronDown, Play, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { Shell } from "@/components/site/Shell";
 import { Reveal } from "@/hooks/use-reveal";
-import { getCourse } from "@/lib/courses";
+import { getCourse, type Course } from "@/lib/courses";
 
 export const Route = createFileRoute("/cursos/$slug")({
   loader: ({ params }) => {
